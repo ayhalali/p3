@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Ali AlAli">
+  <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
+
+  <title>Interactive app</title>
+
+  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/"> -->
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+
+  <link href="index.css" rel="stylesheet">
+
+  <!-- Vue component styles -->
+  <link href="components/adder/adder.css" rel="stylesheet">
+  <link href="components/avg/avg.css" rel="stylesheet">
+  <link href="components/celtofeh/celtofeh.css" rel="stylesheet">
+  <link href="components/miletokilo/miletokilo.css" rel="stylesheet">
+  <link href="components/poundtokilo/poundtokilo.css" rel="stylesheet">
+  <link href="components/gallontoliter/gallontoliter.css" rel="stylesheet">
+
+
+</head>
+
+
+<body class="bgimg"></body>
+<main class="container-fluid  flex-fill">
+  <div class="row">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link " href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link " href="calc.html">Interactive app</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <header class="container-fluid">
+      <h1>Ali AlAli</h1>
+
+    </header>
+    <hr />
+
+
+    <article id="avg" class="col-sm-4">
+
+      <h2>Average Number</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name (2 to 40 characters):</label>
+        <input v-model="guest" id="guest" type="text" minlength="2" maxlength="40" value="">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter first number (1 to 100):</label>
+        <input v-model="firstNumber" id="firstNumber" type="number" min="1" max="100">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="secondNumber">Enter second number (1 to 100):</label>
+        <input v-model="secondNumber" id="secondNumber" type="number" min="1" max="100">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="thirdNumber">Enter a third number (1 to 100):</label>
+        <input v-model="thirdNumber" id="thirdNumber" type="number" min="1" max="100">
+      </fieldset>
+
+      <h2 class="mt-2">{{avgResult}}</h2>
+    </article>
+    <!--end of avg article -->
+
+    <article id="adder" class="col-md-4 ">
+
+      <h2>Bill</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name:</label>
+        <input v-model="guest" id="guest" type="text" minlength="2" maxlength="40" value="" placeholder="Your name"
+          autofocus>
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter total amount:</label>
+        <input v-model="firstNumber" id="firstNumber" type="number" min="0">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="secondNumber">Enter tax rate:</label>
+        <input v-model="secondNumber" id="secondNumber" type="number" min="0">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="thirdNumber">Enter discount rate:</label>
+        <input v-model="thirdNumber" id="thirdNumber" type="number" min="0">
+      </fieldset>
+
+      <h2 class="mt-2">{{addresult}}</h2>
+    </article>
+    <!--end adder article -->
+
+    <article id="celtofeh" class="col-md-4 ">
+
+      <h2>Fahrenheit to Celsius!</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name (2 to 40 characters):</label>
+        <input v-model="guest" id="guest" type="text" minlength="2" maxlength="40" value="">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter a fehrenhite:</label>
+        <input v-model="firstNumber" id="firstNumber" type="number">
+      </fieldset>
+      <br><br>
+      <h2 class="mt-2">{{fcresult}}</h2>
+    </article>
+    <!--end of ferhrenhite article-->
+
+    <article id="miletokilo" class="col-md-4 ">
+      <h2>Miles to Kilometers</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name (2 to 40 characters):</label>
+        <input v-model="guest" id="guest" type="text" minlength="2" maxlength="40" value="" placeholder="Your name"
+          autofocus>
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter mile to convert to km:</label>
+        <input v-model="firstNumber" id="firstNumber" type="number">
+      </fieldset>
+      <br><br>
+      <h2 class="mt-2">{{mtok}}</h2>
+      <br>
+    </article>
+    <!--end of miles to kilometers article-->
+
+    <article id="gallontoliter" class="col-md-4 ">
+      <h2>Gallons to Liters</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name (2 to 40 characters):</label>
+        <input v-model="guest" id="guest" type="text" minlength="2" maxlength="40" value="" placeholder="Your name"
+          autofocus>
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter gallon to convert to liter:</label>
+        <input v-model="firstNumber" id="firstNumber" type="number">
+      </fieldset>
+      <br><br>
+      <h2 class="mt-2">{{gatolit}}</h2>
+      <br>
+    </article>
+    <!--end of miles to kilometers article-->
+
+    <article id="poundtokilo" class="col-md-4 ">
+      <h2>Pounds to Kilograms</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name (2 to 40 characters):</label>
+        <input v-model="guest" id="guest" type="text" minlength="2" maxlength="40" value="" placeholder="Your name"
+          autofocus>
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter lb to convert to kg:</label>
+        <input v-model="firstNumber" id="firstNumber" type="number">
+      </fieldset>
+      <br><br>
+      <h2 class="mt-2">{{gtol}}</h2>
+      <br>
+    </article>
+    <!--end of miles to kilometers article-->
+
+    <article id="totalnums" class="col-md-4 ">
+      <h2>Add numbers</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name (2 to 40 characters):</label>
+        <input v-model="guest" id="guest" type="text" minlength="2" maxlength="40" value="" placeholder="Your name"
+          autofocus>
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter lb to convert to kg:</label>
+        <input v-model="firstNumber" id="firstNumber" type="number">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="secondNumber">Enter second number (1 to 100):</label>
+        <input v-model="secondNumber" id="secondNumber" type="number" min="1" max="100">
+      </fieldset>
+
+      <h4 class="mt-2">{{total}}</h4>
+      <br>
+    </article>
+    <!--end of miles to kilometers article-->
+
+    <article id="localstorage" class="col-md-4 ">
+      <h2>Local Storage</h2>
+      <hr>
+
+      <fieldset class="mt-4">
+        <label for="guest">Enter your name (2 to 40 characters):</label>
+        <input id="guestlocal" type="text" minlength="2" maxlength="40" value="Ali">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="firstNumber">Enter Frist Number:</label>
+        <input id="fNumber" type="number" value=10 min="0">
+      </fieldset>
+
+      <fieldset class="mt-4">
+        <label for="secondNumber">Enter second number :</label>
+        <input id="sNumber" type="number" value=20 min="0">
+      </fieldset>
+      <br>
+      <button id="clicker" class="btn btn-primary">Click me!</button>
+      <button id="wiper" class="btn btn-danger">Clear Storage</button>
+      <br><br>
+      <h5 id="result"></h5>
+    </article>
+    <!--end of Local Storage article-->
+
+    <article id="buttons" class="col-md-4 mb-4">
+      <button id="get-temp" class="btn btn-outline-primary">Maryville Weather</button>
+      <br>
+      <p id="myresult"></p>
+    </article>
+
+
+    <!-- end row 1 -->
+
+  </div>
+</main><!-- /.container -->
+
+<br><br><br><br>
+<footer class="container-fluid">
+  <div id="footer">
+    <a href="https://www.facebook.com/ayhalali" class="sm sm-facebook" target="_blank"><img class="sm-facebook"
+        src="facebook.png"></a>
+    <a href="https://twitter.com/Al3liay" class="sm sm-twitter" target="_blank"><img class="sm-twitter"
+        src="twitter.png"></a>
+    <a href="https://www.instagram.com/alali_ay/" class="sm sm-instagram" target="_blank"><img class="sm-instagram"
+        src="instagram.png"></a>
+    <a href="https://www.linkedin.com/in/ali-alali-a4067096/" class="sm sm-linkein" target="_blank"><img
+        class="sm-linkein" src="linkein.png"></a>
+    <br> &copy; 2019 By Ali AlAli
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+
+<script src="src/fetch-joke.js"></script>
+<script src="src/clicker.js"></script>
+<script src="src/qunit.js"></script>
+<script src="main.test.js"></script>
+<script src="src/fetch.js"></script>
+
+
+<!-- Vue.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js"></script>
+<!-- Vue components -->
+<script src="components/avg/avg.js"></script>
+<script src="components/adder/adder.js"></script>
+<script src="components/celtofeh/celtofeh.js"></script>
+<script src="components/miletokilo/miletokilo.js"></script>
+<script src="components/gallontoliter/gallontoliter.js"></script>
+<script src="components/poundtokilo/poundtokilo.js"></script>
+<script src="components/totalnums/totalnums.js"></script>
+
+
+</body>
+
+</html>
